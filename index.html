@@ -39,7 +39,10 @@
             <h2>Todo</h2>
 
             <div class="container-fluid" ng-controller="TodoListController">
-                <span>1 of 2 remaining</span> [<a href="#">archive</a>]
+                <!-- Ici on exécute la fonction remaining qui nous retourne le nombre de todo restant.
+                Ensuite comme la liste des todos est disponible ici on fait juste un .length pour
+                savoir combien il y en a au total -->
+                <span>{{ remaining() }} of {{ todos.length }} remaining</span> [<a href="#" ng-click="archive()">archive</a>]
 
                 <ul class="list-group">
 

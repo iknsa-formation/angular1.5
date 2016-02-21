@@ -44,4 +44,36 @@ todoApp.controller('TodoListController', function($scope) {
         // Ensuite on vide le champ
         todoList.formNewTodo = '';
     }
+
+    /**
+     * La fonction archive est exécuter lorsqu'on click sur le lien archive
+     */
+    todoList.archive = function() {
+        // On récupère la liste des todos fait ou pas
+        var oldTodos = todoList.todos;
+        // on vide le tableau des todos
+        todoList.todos = [];
+        // On parcours la liste des todos qu'on avait récupérer
+        angular.forEach(oldTodos, function(todo) {
+            // On vérifie si le todo est fait, sinon on le met dans le tableau des todos
+            if (!todo.done) todoList.todos.push(todo);
+        });
+    };
+
+    /**
+     * La fonction remaining qui retourne le nombre de toDo restant (pas encore fait)
+     *
+     * @return {integer} remaining todo
+     */
+    todoList.remaining = function() {
+        // On initialise une variable qui contiendra le nombre de todo restant
+        var count = 0;
+
+        // On boucle sur la liste des todos
+        angular.forEach(todoList.todos, function(todo) {
+            // Pour chaque todo.done qui est à 0 on incrémente le compteur
+            count += todo.done ? 0 : 1;
+        });
+        return count;
+    };
 });
