@@ -59,9 +59,12 @@
                 </ul>
 
                 <form>
-                    <input type="text" placeholder="Add new todo here">
+                    <!-- Ici nous rajoutons la directive ng-model pour avoir le two way data-binding
+                    sur le contenu du champ -->
+                    <input type="text" placeholder="Add new todo here" ng-model="formNewTodo">
 
-                    <button class="btn btn-primary">Add</button>
+                    <!-- Ici on utilise la directive ng-click qui exécutera la méthode addTodo de notre contrôleur -->
+                    <button class="btn btn-primary" ng-click="addTodo()" type="submit">Add</button>
                 </form>
             </div>
           </div>
