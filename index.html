@@ -42,13 +42,19 @@
                 <span>1 of 2 remaining</span> [<a href="#">archive</a>]
 
                 <ul class="list-group">
-                    <li class="list-group-item">
-                        <input type="checkbox">
-                        <span class="done-true">Learn javascript</span>
-                    </li>
-                    <li class="list-group-item">
-                        <input type="checkbox">
-                        <span class="done-false">Learn angular</span>
+
+                    <!-- Avec la directive ng-repeat, angular va dupliquer le marqage HTML
+                    autant de fois qu'il y a de todo dans notre tableau todos défini dans
+                    notre controller -->
+                    <li class="list-group-item" ng-repeat="todo in todos">
+                        <!-- Avec la directive ng-model, nous faisons du two way data-binding.
+                        Quand a valeur du checkbox passe a true (étant donné que les checkbox
+                        retourne un booléen), le ng-model passe a true et nous
+                        récupérons cette valeur dans notre controller et vice versa -->
+                        <input type="checkbox" ng-model="todo.done">
+                        <!-- Ici nous affichons le text du todo mais avant nous prenons avantage
+                        du two way data-binding en modifiant la classe à done-true ou done-false -->
+                        <span class="done-{{ todo.done }}">{{ todo.text }}</span>
                     </li>
                 </ul>
 
