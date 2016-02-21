@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app>
 <head>
     <meta charset="UTF-8">
     <title>iKNSA - ng course</title>
@@ -32,6 +32,23 @@
 
     <div class="row-fluid">
         <main class="container-fluid">
+
+            <div class="jumbotron col-md-4 col-md-offset-4">
+              <label for="name">Name: </label>
+              <input type="text" ng-model="yourName" placeholder="Enter a name here">
+              <h1>Hello {{yourName}}!</h1>
+            </div>
+
+            <div class="jumbotron col-md-4 col-md-offset-4">
+              <h1>{{2 + 2}}</h1>
+            </div>
+
+            <div class="jumbotron col-md-4 col-md-offset-4">
+                <input type="text" ng-model="first"></input>
+                <input type="text" ng-model="second"></input>
+              <h1>{{(first - 0) + (second - 0)}}</h1>
+            </div>
+
         </main>
     </div>
 
