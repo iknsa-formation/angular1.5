@@ -46,6 +46,20 @@ app.config(function($routeProvider) {
         ;
 });
 
+app.directive('maDirective', function() {
+
+  return {
+
+    restrict: 'EA',
+
+    template: '<p>My new directive</p>'
+
+  }
+
+
+
+});
+
 app.controller('AppController', ['$scope', function($scope){
     console.log('AppController');
 }]);
