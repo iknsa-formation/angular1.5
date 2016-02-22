@@ -26,17 +26,13 @@ app.config(function($routeProvider) {
             controller: 'QuotationController',
             templateUrl: 'templates/quotation.html'
         })
-        .when('/contact', {
-            controller: 'ContactController',
-            templateUrl: 'templates/contact.html'
-        })
         .when('/friends', {
             controller: 'FriendsController',
             templateUrl: 'templates/friends.html'
         })
-        .when('/friends/new', {
+        .when('/friend/new', {
             controller: 'FriendsController',
-            templateUrl: 'templates/friends-new.html'
+            templateUrl: 'templates/friend-new.html'
         })
         .when('/404', {
             controller: 'NotFoundController',
@@ -64,10 +60,6 @@ app.controller('RecruitementController', ['$scope', function($scope){
 
 app.controller('QuotationController', ['$scope', function($scope){
     console.log('QuotationController');
-}]);
-
-app.controller('ContactController', ['$scope', function($scope){
-    console.log('ContactController');
 }]);
 
 app.controller('FriendsController', ['$scope', function($scope){
