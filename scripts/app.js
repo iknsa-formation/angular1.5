@@ -62,26 +62,39 @@ app.directive('maDirective', function() {
 
 app.controller('AppController', ['$scope', function($scope){
     console.log('AppController');
+    $scope.color = 'rouge';
+    $scope.title = 'Vous êtes sur la page d\'accueil';
 }]);
 
 app.controller('AboutController', ['$scope', function($scope){
     console.log('AboutController');
+    $scope.color = 'bleu';
+    $scope.title = 'Vous êtes sur la page a porpos';
 }]);
 
 app.controller('RecruitementController', ['$scope', function($scope){
     console.log('RecruitementController');
+    $scope.color = 'jaune';
+    $scope.title = 'Vous êtes sur la page de recrutement';
 }]);
 
 app.controller('QuotationController', ['$scope', function($scope){
     console.log('QuotationController');
+    $scope.color = 'violet';
+    $scope.title = 'Vous êtes sur la page de devis';
 }]);
 
 app.controller('FriendsController', ['$scope', function($scope){
     console.log('FriendsController');
+    $scope.color = 'vert';
+    $scope.title = 'Vous êtes sur la page des amis';
+    $scope.newTitle = 'Vous êtes sur la page de d\'ajout d\'un ami'
 }]);
 
 app.controller('NotFoundController', ['$scope', function($scope){
     console.log('NotFoundController');
+    $scope.color = 'violet';
+    $scope.title = 'Ooops... Je ne trouve pas cette page'
 }]);
 
 app.controller('TestController', ['$scope', function($scope){
