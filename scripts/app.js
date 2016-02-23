@@ -86,4 +86,19 @@ app.controller('NotFoundController', ['$scope', function($scope){
 
 app.controller('TestController', ['$scope', function($scope){
     console.log('TestController');
+
+    $scope.who = ' tu';
+    $scope.what = ' vas bien? ';
+}]);
+
+app.controller('ChildController', ['$scope', function($scope){
+    console.log('ChildController');
+    $scope.what = ' bien ou bienne? ';
+}]);
+
+app.controller('GrandChildController', ['$scope', function($scope){
+    console.log('GrandChildController');
+
+    $scope.who = ' Noemie';
+    $scope.what = ' tu vas bien?';
 }]);

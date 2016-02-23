@@ -1,2 +1,27 @@
-<p ma-directive></p>
-<ma-directive></ma-directive>
+<!-- Controller inheritance -->
+<div class="jumbotron">
+    <h1>Controller inheritance</h1>
+    <div style="padding:30px;border: 1px solid red">
+        <div ng-controller="TestController">
+
+            <p>Hello {{who}}, {{what}}!</p>
+
+            <div style="padding:30px;border: 1px solid blue" ng-controller="ChildController">
+
+                <p>Hello {{who}}, {{what}}!</p>
+
+                <div style="padding:30px;border: 1px solid green" ng-controller="GrandChildController">
+                    <p>Hello {{who}}, {{what}}!</p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Directive -->
+<div class="jumbotron">
+    <h1>Directives</h1>
+    <p ma-directive></p>
+    <ma-directive></ma-directive>
+</div>
