@@ -97,6 +97,13 @@ app.controller('TestController', ['$scope', function($scope){
     });
 
     $scope.$broadcast('evt', 'Message aux descendants de TestController');
+
+    // Scope listner
+    $scope.country = "United States";
+    $scope.$watch('country', function(newValue, oldValue) {
+        console.log(newValue);
+        console.log(oldValue);
+    });
 }]);
 
 app.controller('ChildController', ['$scope', function($scope){
