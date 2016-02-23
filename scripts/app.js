@@ -100,9 +100,10 @@ app.controller('TestController', ['$scope', function($scope){
 
     // Scope listner
     $scope.country = "United States";
-    $scope.$watch('country', function(newValue, oldValue) {
-        console.log(newValue);
-        console.log(oldValue);
+    $scope.$watch('country === "France"', function(newValue, oldValue) {
+        if(newValue) {
+            $scope.country = "FR";
+        }
     });
 }]);
 
