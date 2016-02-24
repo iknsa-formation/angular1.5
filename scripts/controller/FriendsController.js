@@ -1,4 +1,4 @@
-app.controller('FriendsController', ['$scope', function($scope){
+app.controller('FriendsController', ['$scope', 'FriendsFactory', function($scope, FriendsFactory){
     console.log('FriendsController');
     $scope.color = 'vert';
     $scope.title = 'Vous êtes sur la page des amis';
@@ -6,7 +6,7 @@ app.controller('FriendsController', ['$scope', function($scope){
 
     // New friends submit method
     $scope.new = function(friend) {
-        console.log(friend);
+        FriendsFactory.new(friend);
     };
     $scope.reset = function(newFriendForm) {
         $scope.friend = {};
