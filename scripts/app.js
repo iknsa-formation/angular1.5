@@ -89,6 +89,11 @@ app.controller('FriendsController', ['$scope', function($scope){
     $scope.color = 'vert';
     $scope.title = 'Vous êtes sur la page des amis';
     $scope.newTitle = 'Vous êtes sur la page de d\'ajout d\'un ami'
+
+    // New friends submit method
+    $scope.new = function(friend) {
+        console.log(friend);
+    };
 }]);
 
 app.controller('NotFoundController', ['$scope', function($scope){
