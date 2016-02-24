@@ -1,22 +1,30 @@
             <ng-include src="'templates/partials/banner.html'"></ng-include>
 
-            <form class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
+            <form class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3" novalidate>
                 <div class="form-group">
                     <label for="name">Name</label>
-                    <input class="form-control" id="name" placeholder="Name" type="text">
+                    <input class="form-control" id="name" placeholder="Name" type="text" ng-model="friend.name" required>
                 </div>
                 <div class="form-group">
                     <label for="email">Email address</label>
-                    <input class="form-control" id="email" placeholder="Email" type="email">
+                    <input class="form-control" id="email" placeholder="Email" type="email" ng-model="friend.email" required>
                 </div>
                 <div class="form-group">
                     <label for="tel">Tel</label>
-                    <input class="form-control" id="tel" placeholder="Tel" type="text">
+                    <input class="form-control" id="tel" placeholder="Tel" type="text" ng-model="friend.tel" required>
                 </div>
                 <div class="form-group">
                     <label for="age">Age</label>
-                    <input class="form-control" id="age" placeholder="Age" type="number">
+                    <input class="form-control" id="age" placeholder="Age" type="number" ng-model="friend.age" required>
                 </div>
 
                 <button type="submit" class="btn btn-primary">Submit</button>
+                <hr>
+                <div class="row">
+                    <div class="container">
+                        <pre>
+                            {{friend}}
+                        </pre>
+                    </div>
+                </div>
             </form>
