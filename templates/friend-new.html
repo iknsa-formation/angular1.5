@@ -3,19 +3,45 @@
             <form name="newFriendForm" class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3" ng-submit="new(friend)" novalidate>
                 <div class="form-group">
                     <label for="name">Name</label>
-                    <input class="form-control" id="name" placeholder="Name" type="text" ng-model="friend.name" required>
+                    <input class="form-control" id="name" name="name" placeholder="Name" type="text" ng-model="friend.name" required>
+                    <div class="error" ng-show="newFriendForm.name.$error && newFriendForm.name.$touched">
+                        <div ng-show="newFriendForm.name.$error.required">
+                            <p class="error">Merci de renseigner ce champ</p>
+                        </div>
+                    </div>
                 </div>
                 <div class="form-group">
                     <label for="email">Email address</label>
-                    <input class="form-control" id="email" placeholder="Email" type="email" ng-model="friend.email" required>
+                    <input class="form-control" id="email" name="email" placeholder="Email" type="email" ng-model="friend.email" required>
+                    <div class="error" ng-show="newFriendForm.email.$error && newFriendForm.email.$touched">
+                        <div ng-show="newFriendForm.email.$error.required">
+                            <p class="error">Merci de renseigner ce champ</p>
+                        </div>
+                        <div ng-show="newFriendForm.email.$error.email">
+                            <p class="error">Ce mail n'est pas valide</p>
+                        </div>
+                    </div>
                 </div>
                 <div class="form-group">
                     <label for="tel">Tel</label>
-                    <input class="form-control" id="tel" placeholder="Tel" type="text" ng-model="friend.tel" required>
+                    <input class="form-control" id="tel" name="tel" placeholder="Tel" type="text" ng-model="friend.tel" required>
+                    <div class="error" ng-show="newFriendForm.tel.$error && newFriendForm.tel.$touched">
+                        <div ng-show="newFriendForm.tel.$error.required">
+                            <p class="error">Merci de renseigner ce champ</p>
+                        </div>
+                    </div>
                 </div>
                 <div class="form-group">
                     <label for="age">Age</label>
-                    <input class="form-control" id="age" placeholder="Age" type="number" ng-model="friend.age" required>
+                    <input class="form-control" id="age" name="age" placeholder="Age" type="number" ng-model="friend.age" required>
+                    <div class="error" ng-show="newFriendForm.age.$error && newFriendForm.age.$touched">
+                        <div ng-show="newFriendForm.age.$error.required">
+                            <p class="error">Merci de renseigner ce champ</p>
+                        </div>
+                        <div ng-show="newFriendForm.age.$error.number">
+                            <p class="error">Cet age n'est pas valide</p>
+                        </div>
+                    </div>
                 </div>
 
                 <button type="submit" class="btn btn-primary" ng-disabled="newFriendForm.$invalid">Submit</button>
