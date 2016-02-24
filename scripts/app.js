@@ -94,6 +94,11 @@ app.controller('FriendsController', ['$scope', function($scope){
     $scope.new = function(friend) {
         console.log(friend);
     };
+    $scope.reset = function(newFriendForm) {
+        $scope.friend = {};
+        newFriendForm.$setPristine();
+        newFriendForm.$setUntouched();
+    };
 }]);
 
 app.controller('NotFoundController', ['$scope', function($scope){
