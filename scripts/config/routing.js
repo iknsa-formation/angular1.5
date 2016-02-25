@@ -16,12 +16,12 @@ app.config(function($routeProvider) {
             controller: 'QuotationController',
             templateUrl: 'templates/quotation.html'
         })
-        .when('/friends', {
-            controller: 'FriendsController',
+        .when('/friend', {
+            controller: 'ListingController',
             templateUrl: 'templates/friends.html'
         })
         .when('/friend/new', {
-            controller: 'FriendsController',
+            controller: 'NewController',
             templateUrl: 'templates/friend-new.html'
         })
         .when('/404', {
