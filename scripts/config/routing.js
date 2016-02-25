@@ -36,6 +36,10 @@ app.config(function($routeProvider) {
             controller: 'TestController',
             templateUrl: 'templates/test.html'
         })
+        .when('/test/http', {
+            controller: 'TestHttpController',
+            templateUrl: 'templates/http.html'
+        })
         .otherwise({redirectTo: '/404'})
         ;
 });
