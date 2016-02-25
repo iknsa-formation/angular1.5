@@ -1,13 +1,7 @@
-app.controller('NewController', ['$scope', '$routeParams', 'FriendsFactory', function($scope, $routeParams, FriendsFactory){
-    console.log('NewController');
-    $scope.color = 'vert';
-    $scope.title = 'Vous êtes sur la page des amis';
-    $scope.newTitle = 'Vous êtes sur la page de d\'ajout d\'un ami'
-    var param = $routeParams.param;
-
-    $scope.index = function(friend) {
-        FriendsFactory.index();
-    };
+app.controller('FriendNewController', ['$scope', 'FriendsFactory', function($scope, FriendsFactory){
+    console.log('FriendNewController');
+    $scope.color = 'violet';
+    $scope.title = 'Vous êtes sur la page de d\'ajout d\'un ami'
 
     // New friends submit method
     $scope.new = function(friend) {

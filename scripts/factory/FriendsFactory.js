@@ -1,24 +1,36 @@
 app.factory('FriendsFactory', [function(){
     var $friendsFactory = {};
 
-    $friendsFactory.new = function (friend){
-        console.log(friend);
-    };
+    var defaultFriends = [
+        {name: 'Khalid Sookia', email: 'khalid.sookia@iknsa.com', tel: '0782182189', age: 30},
+        {name: 'Khalid Sookia', email: 'khalid.sookia@iknsa.com', tel: '0782182189', age: 30}
+    ];
 
     $friendsFactory.index = function() {
-        console.log('Friends listing');
+
+        var savedFriends = localStorage.getItem('friends');
+
+        var friends = (savedFriends !== null) ? JSON.parse(savedFriends) : JSON.parse(defaultFriends);
+        localStorage.setItem('friends', JSON.stringify(friends));
+
+        return friends;
+    };
+
+    $friendsFactory.new = function (friend){
+
+        var friends = $friendsFactory.index();
+
+        friends.push(friend);
+        localStorage.setItem('friends', JSON.stringify(friends));
+
+        console.log(friends);
     };
 
     $friendsFactory.show = function(id) {
-        console.log('Friend show');
-    };
 
-    $friendsFactory.edit = function(id) {
-        console.log('Friend edit');
-    };
+        var friends = $friendsFactory.index();
 
-    $friendsFactory.delete = function(id) {
-        console.log('Friend delete');
+        console.log(friends[id]);
     };
 
     return $friendsFactory;

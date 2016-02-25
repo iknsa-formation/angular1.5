@@ -17,12 +17,16 @@ app.config(function($routeProvider) {
             templateUrl: 'templates/quotation.html'
         })
         .when('/friend', {
-            controller: 'ListingController',
+            controller: 'FriendListingController',
             templateUrl: 'templates/friends.html'
         })
         .when('/friend/new', {
-            controller: 'NewController',
+            controller: 'FriendNewController',
             templateUrl: 'templates/friend-new.html'
+        })
+        .when('/friend/:id', {
+            controller: 'FriendShowController',
+            templateUrl: 'templates/friends.html'
         })
         .when('/404', {
             controller: 'NotFoundController',
